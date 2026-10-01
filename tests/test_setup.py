@@ -1,7 +1,12 @@
 """Session 2 checkpoint. Run with:  uv run pytest tests/test_setup.py"""
 import os
 import sys
+from pathlib import Path
+
+import pytest
 from dotenv import load_dotenv
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "module01"))
 
 load_dotenv()
 
@@ -27,3 +32,13 @@ def test_model_answers():
         messages=[{"role": "user", "content": "Reply with OK"}],
     )
     assert r.choices[0].message.content
+
+
+def test_chat_client_requires_real_env(monkeypatch):
+    from tokens_utils import chat_client
+
+    monkeypatch.setenv("BASE_URL", "https://api.groq.com/openai/v1")
+    monkeypatch.setenv("API_KEY", "paste_your_groq_key_here")
+
+    with pytest.raises(RuntimeError, match="placeholder|copy .env.example"):
+        chat_client()

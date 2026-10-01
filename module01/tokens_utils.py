@@ -10,7 +10,7 @@ import tiktoken
 from dotenv import load_dotenv
 from openai import OpenAI
 
-load_dotenv()
+load_dotenv(override=True)   # .env wins over anything an editor put in the environment
 
 # ---------------------------------------------------------------- tokenizer
 # gpt-oss models use the o200k_harmony encoding; tiktoken ships it. For other
@@ -33,9 +33,9 @@ def show_tokens(text: str, encoding: str = ENCODING) -> list[str]:
 # ---------------------------------------------------------------- cost
 # Indicative price cards, USD per 1M tokens (edit these — prices change).
 PRICE_CARDS = {
-    "groq gpt-oss-20b": {"input": 0.10, "output": 0.50},
-    "frontier small":   {"input": 0.15, "output": 0.60},
-    "frontier large":   {"input": 2.50, "output": 10.00},
+    "groq gpt-oss-20b": {"input": 0.075, "output": 0.30},   # indicative, Sep 2026 - verify
+    "frontier economy": {"input": 0.50,  "output": 2.50},   # indicative tier
+    "frontier flagship": {"input": 5.00, "output": 25.00},  # indicative tier
 }
 USD_TO_INR = 84.0
 
@@ -59,7 +59,13 @@ def ollama_client() -> OpenAI:
 
 def usage_for(client: OpenAI, model: str, text: str) -> tuple[int, int]:
     """Send text; return (prompt_tokens, completion_tokens) as the model counted them."""
-    r = client.chat.completions.create(model=model, max_tokens=16, messages=[{"role": "user", "content": text}])
+    r = client.chat.completions.create(
+    model=model,
+    max_tokens=16,
+    messages=[{"role": "user", "content": text}],
+)
+    if r is None or r.usage is None:
+        raise RuntimeError("Model response did not include usage data")
     return r.usage.prompt_tokens, r.usage.completion_tokens
 
 
