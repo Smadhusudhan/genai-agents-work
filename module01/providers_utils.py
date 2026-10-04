@@ -48,12 +48,12 @@ def ask(client: OpenAI, model: str, system: str, user: str, *, temperature: floa
     kwargs = dict(model=model, messages=messages, temperature=temperature, max_tokens=max_tokens)
     if stop:
         kwargs["stop"] = stop
-    r = client.chat.completions.create(**kwargs)
+    r = client.chat.completions.create(**kwargs) # type: ignore
     
     return {
         "text": r.choices[0].message.content,
         "prompt_tokens": r.usage.prompt_tokens,
-        "completion_tokens": r.usage.completion_tokens,
+        "completion_tokens": r.usage.completion_tokens,                 
         "total_tokens": r.usage.total_tokens,
     }
 
