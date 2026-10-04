@@ -1,4 +1,4 @@
-# Pre-read for Session 12 — ten minutes
+# Pre-read for Session 12 — ten minutes.
 
 **Before class:** pull a second local model so the lab has something to compare against `llama3.2:3b`:
 ```powershell
@@ -13,6 +13,6 @@ About 4-5 GB — do this on good Wi-Fi, not in the classroom.
 **Not every small model can call tools.** Function/tool calling — the mechanism agents depend on — is a capability some models are specifically trained for and others aren't. A small model might produce a perfectly fluent sentence describing what it *would* do, without ever emitting the structured call your code is waiting for. This matters directly once Module 6 starts: an agent built on a model that can't reliably call tools isn't an agent.
 
 **Three questions to arrive with**
-- Why would a bank care whether a model can run entirely on a laptop, even though a hosted model is faster?
-- If your laptop has 8 GB of RAM, roughly how large a model (at 4-bit) can you realistically run?
-- A model's page on Hugging Face says "gated — request access." What do you think that means?
+- Why would a bank care whether a model can run entirely on a laptop, even though a hosted model is faster ?
+- If your laptop has 8 GB of RAM, roughly how large a model (at 4-bit) can you realistically run ?
+- A model's page on Hugging Face says "gated — request access." What do you think that means ?
