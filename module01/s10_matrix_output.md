@@ -43,4 +43,4 @@ expected EMI 17594.09, ratio 42.7%
 - excluded: Frontier mid-tier (closed, vendor API) (too slow (3.5 s > 3.0 s))
 
 ## Measured
-{'groq': {'ttft_s': 2.11, 'total_s': 2.11, 'tokens_per_s': 712.6, 'check': {'emi_ok': False, 'ratio_ok': False, 'score_out_of_2': 0}}, 'ollama': {'ttft_s': 2.33, 'total_s': 12.77, 'tokens_per_s': 11.4, 'check': {'emi_ok': False, 'ratio_ok': False, 'score_out_of_2': 0}}}
+{'groq': {'ttft_s': 3.46, 'total_s': 3.46, 'tokens_per_s': 434.0, 'check': {'emi_ok': False, 'ratio_ok': False, 'score_out_of_2': 0}}, 'ollama': {'ttft_s': 22.98, 'total_s': 31.53, 'tokens_per_s': 3.7, 'check': {'emi_ok': True, 'ratio_ok': False, 'score_out_of_2': 1}}}
