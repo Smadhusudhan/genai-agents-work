@@ -1,0 +1,11 @@
+{
+  "note": "INDICATIVE parameter counts, September 2026. GB figures are computed from params x bytes-per-param, not measured - real deployments add overhead for activations and the KV cache on top of this.",
+  "models": [
+    {"id": "llama32-1b", "name": "llama3.2:1b", "params_billion": 1.0, "precision": "int4", "tool_calling": false, "notes": "Smallest useful chat model. Fast on anything, weak reasoning."},
+    {"id": "llama32-3b", "name": "llama3.2:3b", "params_billion": 3.0, "precision": "int4", "tool_calling": false, "notes": "The course default local model. No reliable tool calling."},
+    {"id": "qwen25-7b", "name": "qwen2.5:7b", "params_billion": 7.0, "precision": "int4", "tool_calling": true, "notes": "Supports tool calling reasonably well for its size."},
+    {"id": "llama31-8b", "name": "llama3.1:8b", "params_billion": 8.0, "precision": "int4", "tool_calling": true, "notes": "Good general-purpose local model if RAM allows."},
+    {"id": "gpt-oss-20b-local", "name": "gpt-oss:20b (local)", "params_billion": 20.0, "precision": "int4", "tool_calling": true, "notes": "Same weights as the hosted Groq default. Needs a capable laptop or a small GPU."},
+    {"id": "gpt-oss-120b-local", "name": "gpt-oss:120b (local)", "params_billion": 120.0, "precision": "int4", "tool_calling": true, "notes": "Needs a GPU server, not a laptop. Listed for comparison only."}
+  ]
+}
