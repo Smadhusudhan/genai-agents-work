@@ -1,4 +1,4 @@
-# Pre-read for Session 10 — ten minutes
+# Pre-read for Session 10 — ten minutes.
 
 **The question.** Yesterday you learned what a model sees. Today: *which* model goes in the box? There are hundreds. The skill is not knowing them all — it is having a method that works when a new one appears next month.
 
@@ -28,4 +28,4 @@ Some data may not leave your building, or your country, however good and cheap t
 ## Three questions to arrive with
 - A bank wants a chatbot for public product questions *and* a system that reads customers' salary slips. Should they use the same model? Why or why not?
 - Your laptop can run a small model for free. Why can't it be the FAQ bot for 20,000 calls a day?
-- A leaderboard says Model A beats Model B by 4 points. What would you still want to check before switching?
+- A leaderboard says Model A beats Model B by 4 points. What would you still want to check before switching ?
