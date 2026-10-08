@@ -1,7 +1,7 @@
 [project]
-name = "genai-agents-course"
+name = "GenAI-Agents-Work"
 version = "0.1.0"
-description = "GenAI · Agentic AI · AI Agents — course repo (Ajit Byru)"
+description = "Hands-on Generative AI and Agentic AI engineering projects"
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "openai>=1.60,<2",
@@ -18,3 +18,8 @@ dependencies = [
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+]
