@@ -25,3 +25,4 @@ Thumbs.db
 # Local test / usage files
 .tmp_*.py
 agent.py
+/s16_cache.json
